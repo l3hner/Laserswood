@@ -3,144 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Website</title>
-    <!-- Turnstile für Cloudflare Bot-Schutz -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turnstile/1.0.0/turnstile.min.js"></script>
+    <title>Mehrfamilienhäuser</title>
     <style>
-        :root {
-            --primary-color: #f6821f;
-            --secondary-color: #404040;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--secondary-color);
+            line-height: 1.6;
+            background-color: #f7f7f7;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
         header {
-            background: linear-gradient(135deg, var(--primary-color), #ff9f40);
+            background-color: #003366;
             color: white;
-            padding: 60px 0;
             text-align: center;
+            padding: 2rem 1rem;
         }
-
         header h1 {
             margin: 0;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-size: 2.5rem;
         }
-
-        nav {
-            background: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 1rem 0;
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
         }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: url('bild1.jpg') no-repeat center center/cover;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            align-items: center;
         }
-
-        nav a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        .content {
-            padding: 40px 0;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background: var(--secondary-color);
+        .hero h2 {
             color: white;
-            padding: 40px 0;
-            text-align: center;
-            margin-top: 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem 2rem;
+            border-radius: 5px;
         }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
+        .content-section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .content-section h2 {
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+        .content-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        .content-section p {
+            margin-bottom: 1rem;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 1rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Willkommen auf meiner Website</h1>
-            <p>Optimiert für Cloudflare Pages</p>
-        </div>
+        <h1>Moderne Mehrfamilienhäuser</h1>
+        <p>Nachhaltige, effiziente und zeitgemäße Wohnlösungen für die Zukunft.</p>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Über uns</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="hero">
+        <h2>Ihr neues Zuhause in bester Lage</h2>
+    </div>
 
-    <main class="container content">
-        <div class="card">
-            <h2>Über uns</h2>
-            <p>Willkommen auf unserer Website! Wir nutzen Cloudflare für schnelles und sicheres Hosting.</p>
-        </div>
+    <div class="content-section">
+        <h2>Eleganz und Effizienz</h2>
+        <img src="bild2.jpg" alt="Bild des Mehrfamilienhauses">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus nulla id elit gravida, sit amet fermentum velit gravida. 
+        Cras et nulla ac libero malesuada blandit. Curabitur vehicula quam nec nisl condimentum vulputate.</p>
+        <p>Proin vehicula, eros eget laoreet sodales, quam erat facilisis tortor, in tempor erat purus ut arcu. Integer 
+        suscipit elit eu risus aliquet, vitae dictum nisl lacinia.</p>
+    </div>
 
-        <div class="card">
-            <h2>Unsere Leistungen</h2>
-            <p>Diese Website wird über Cloudflare Pages gehostet und nutzt automatisch:</p>
-            <ul>
-                <li>Globales CDN</li>
-                <li>SSL-Verschlüsselung</li>
-                <li>DDoS-Schutz</li>
-                <li>Automatische Optimierungen</li>
-            </ul>
-        </div>
+    <div class="content-section">
+        <h2>Nachhaltiges Bauen</h2>
+        <img src="bild3.jpg" alt="Nachhaltige Bauweise">
+        <p>Aliquam tincidunt, ligula id venenatis fermentum, velit ligula ultricies justo, sed aliquet purus tortor vel sapien. 
+        Suspendisse potenti. Nullam tristique risus in lectus gravida scelerisque.</p>
+        <p>Nam sed nisl sit amet tortor pharetra vehicula. Vestibulum volutpat tristique arcu nec dapibus.</p>
+    </div>
 
-        <div class="card">
-            <h2>Kontakt</h2>
-            <p>Email: ihre@email.de</p>
-            <p>Telefon: +49 123 456789</p>
-        </div>
-    </main>
+    <div class="content-section">
+        <h2>Individuelle Gestaltung</h2>
+        <img src="bild4.jpg" alt="Individuelle Architektur">
+        <p>Praesent volutpat lacus id erat lacinia, quis facilisis sapien mollis. Sed euismod, elit id efficitur consectetur, 
+        tortor odio mollis augue, a laoreet purus elit et nulla.</p>
+        <p>Etiam dictum metus nec odio elementum, sed tincidunt ex blandit. Aenean vel nulla id ligula cursus scelerisque.</p>
+    </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Ihre Firma. Alle Rechte vorbehalten.</p>
-            <p>Powered by Cloudflare Pages</p>
-        </div>
+        <p>© 2024 Moderne Mehrfamilienhäuser. Alle Rechte vorbehalten.</p>
     </footer>
 </body>
 </html>
