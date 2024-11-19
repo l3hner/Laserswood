@@ -14,6 +14,7 @@ header {
     color: white;
     text-align: center;
     padding: 2rem 1rem;
+    position: relative;
 }
 
 header h1 {
@@ -26,6 +27,56 @@ header p {
     margin-top: 0.5rem;
 }
 
+/* Navigation */
+nav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-menu {
+    display: none; /* Ausblenden */
+    background-color: #004d00;
+    color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #003300;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #006600;
+}
+
 /* Hero-Bereich */
 .hero {
     position: relative;
@@ -36,6 +87,7 @@ header p {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    animation: fadeIn 2s ease-in-out; /* Fade-In-Animation beim Laden */
 }
 
 .hero h2 {
@@ -46,29 +98,49 @@ header p {
     font-size: 1.8rem;
 }
 
+/* Fade-In-Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Bilder im Scroll-Effekt */
+.content-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 10px solid #ccc;
+    margin: 0 auto;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s ease-in-out; /* Übergangsanimation */
+}
+
+/* Bilder erscheinen und wachsen beim Scrollen */
+img.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
 /* Inhalt */
 .content-section {
-    max-width: 1200px; /* Maximale Breite des Containers */
-    margin: 2rem auto; /* Zentriert den Container horizontal */
+    max-width: 1200px;
+    margin: 2rem auto;
     padding: 1rem;
-    background-color: #f0f0f0; /* Hellgrauer Hintergrund */
+    background-color: #f0f0f0;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Verhindert, dass Inhalte über den Container hinausragen */
+    overflow: hidden;
 }
 
 .content-section h2 {
-    color: #004d00; /* Dunkelgrün */
+    color: #004d00;
     margin-bottom: 1rem;
-}
-
-.content-section img {
-    max-width: 100%; /* Bild füllt den Container vollständig aus */
-    height: auto; /* Bewahrt das Seitenverhältnis des Bildes */
-    display: block; /* Entfernt unerwünschte Abstände unterhalb des Bildes */
-    border: 10px solid #ccc; /* 10px Rahmen in Grau */
-    margin: 0 auto; /* Zentriert das Bild innerhalb des Containers */
-    box-sizing: border-box; /* Bezieht den Rahmen in die Breite ein */
 }
 
 .content-section p {
@@ -76,13 +148,65 @@ header p {
     line-height: 1.8;
 }
 
+/* Cookie-Banner */
+#cookie-banner {
+    background-color: #004d00;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+#cookie-banner p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+#cookie-banner a {
+    color: yellow;
+    text-decoration: underline;
+}
+
+#cookie-banner button {
+    background-color: yellow;
+    color: #004d00;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cookie-banner button:hover {
+    background-color: #ffcc00;
+}
+
 /* Footer */
 footer {
-    background-color: #004d00; /* Dunkelgrün */
+    background-color: #004d00;
     color: white;
     text-align: center;
     padding: 1rem;
-    background-image: linear-gradient(to top, yellow, #004d00); /* Gelb oben im Verlauf */
+    background-image: linear-gradient(to top, yellow, #004d00);
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+#social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+#social-links a:hover {
+    text-decoration: underline;
 }
 
 /* Responsives Design */
@@ -110,5 +234,16 @@ footer {
 
     footer {
         font-size: 0.9rem;
+    }
+
+    nav {
+        position: relative;
+        top: auto;
+        right: auto;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
     }
 }
