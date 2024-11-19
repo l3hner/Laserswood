@@ -48,14 +48,13 @@ header p {
 
 /* Inhalt */
 .content-section {
-    max-width: 1200px;
-    margin: 2rem auto;
+    max-width: 1200px; /* Maximale Breite des Containers */
+    margin: 2rem auto; /* Zentriert den Container horizontal */
     padding: 1rem;
     background-color: #f0f0f0; /* Hellgrauer Hintergrund */
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border: 1px solid #ccc;
+    overflow: hidden; /* Verhindert, dass Inhalte über den Container hinausragen */
 }
 
 .content-section h2 {
@@ -64,11 +63,12 @@ header p {
 }
 
 .content-section img {
-    width: 100%; /* Passt das Bild an die Breite des Containers an */
-    height: auto;
-    border-radius: 5px;
+    max-width: 100%; /* Bild füllt den Container vollständig aus */
+    height: auto; /* Bewahrt das Seitenverhältnis des Bildes */
+    display: block; /* Entfernt unerwünschte Abstände unterhalb des Bildes */
     border: 10px solid #ccc; /* 10px Rahmen in Grau */
-    margin-bottom: 1rem;
+    margin: 0 auto; /* Zentriert das Bild innerhalb des Containers */
+    box-sizing: border-box; /* Bezieht den Rahmen in die Breite ein */
 }
 
 .content-section p {
