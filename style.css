@@ -61,7 +61,7 @@ header p {
 }
 
 .content-section img {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -70,19 +70,6 @@ header p {
 .content-section p {
     margin-bottom: 1rem;
     line-height: 1.8;
-}
-
-.content-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    overflow: hidden;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
 }
 
 
