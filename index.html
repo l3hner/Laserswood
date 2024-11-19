@@ -17,21 +17,21 @@
 <body>
     <!-- Cookie-Banner -->
     <div id="cookie-banner" aria-live="polite">
-        <p>Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. <a href="#datenschutz">Mehr erfahren</a>.</p>
+        <p>Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. <a href="#" onclick="openDatenschutz()">Mehr erfahren</a>.</p>
         <button id="accept-cookies">Einverstanden</button>
     </div>
 
     <!-- Header -->
     <header>
         <h1>Moderne Mehrfamilienhäuser</h1>
-        <p>Nachhaltige, effiziente und zeitgemäße Wohnlösungen für die Zukunft.</p>
-        <!-- Navigation -->
         <nav>
-            <div class="menu-icon" aria-label="Navigation öffnen" tabindex="0">☰</div>
-            <ul class="dropdown-menu" aria-expanded="false">
-                <li><a href="#gebaeudetypen">Gebäudetyp</a></li>
-                <li><a href="#verbindungsmittel">Verbindungsmittel</a></li>
-                <li><a href="#technikfortschritt">Technikfortschritt</a></li>
+            <!-- Dropdown-Trigger -->
+            <div class="menu-trigger" aria-label="Menü öffnen" tabindex="0" onclick="toggleMenu()">≡</div>
+            <!-- Dropdown-Menü -->
+            <ul class="dropdown-menu">
+                <li><a href="#" onclick="openPage('gebaeudetyp')">Gebäudetyp</a></li>
+                <li><a href="#" onclick="openPage('verbindungsmittel')">Verbindungsmittel</a></li>
+                <li><a href="#" onclick="openPage('technikfortschritt')">Technikfortschritt</a></li>
             </ul>
         </nav>
     </header>
@@ -42,73 +42,76 @@
     </section>
 
     <!-- Abschnitt 1: Eleganz und Effizienz -->
-    <section class="content-section" id="eleganz-effizienz">
+    <section class="content-section">
         <h2>Eleganz und Effizienz</h2>
         <img src="bild1.png" alt="Bild des Mehrfamilienhauses">
-        <p>Erleben Sie moderne Architektur, die Eleganz und Funktionalität nahtlos miteinander verbindet.</p>
-        <p>Mit großzügigen Fensterfronten und offenen Wohnbereichen schaffen sie ein Gefühl von Weite und Licht.</p>
+        <p>Eleganz und Effizienz sind zwei zentrale Aspekte moderner Mehrfamilienhäuser. Unsere Gebäude vereinen zeitgemäße Architektur mit durchdachten Wohnkonzepten, die sowohl optisch beeindrucken als auch funktional überzeugen. Dank nachhaltiger Materialien und energieeffizienter Technologien schaffen sie ein angenehmes Wohnumfeld, das die Ressourcen schont.</p>
+        <p>Großzügige Fensterflächen sorgen für helle, lichtdurchflutete Räume, während innovative Dämmstoffe für Energieeinsparungen sorgen. Ob für Familien, Singles oder Paare – unsere Häuser sind so gestaltet, dass sie den Ansprüchen moderner Bewohner gerecht werden und gleichzeitig einen langfristigen Wert darstellen.</p>
     </section>
 
     <!-- Abschnitt 2: Nachhaltiges Bauen -->
-    <section class="content-section" id="nachhaltiges-bauen">
+    <section class="content-section">
         <h2>Nachhaltiges Bauen</h2>
         <img src="bild2.png" alt="Nachhaltige Bauweise">
-        <p>Unsere Mehrfamilienhäuser werden mit umweltfreundlichen Materialien gebaut, um den CO₂-Fußabdruck zu minimieren.</p>
-        <p>Dank moderner Dämmung und energieeffizienter Heizsysteme leisten sie einen Beitrag zur Nachhaltigkeit.</p>
+        <p>Nachhaltiges Bauen ist der Schlüssel für die Zukunft. Unsere Mehrfamilienhäuser werden aus umweltfreundlichen Materialien gefertigt, die nicht nur den CO₂-Ausstoß minimieren, sondern auch für ein gesundes Wohnklima sorgen. Moderne Dämmung, Solaranlagen und innovative Heizsysteme machen unsere Gebäude besonders effizient.</p>
+        <p>Mit dem Fokus auf Nachhaltigkeit setzen wir auf langfristige Vorteile für die Bewohner und die Umwelt. Die Kombination aus grünen Bauweisen und moderner Architektur macht unsere Mehrfamilienhäuser zu einer zukunftssicheren Wahl.</p>
     </section>
 
     <!-- Abschnitt 3: Individuelle Gestaltung -->
-    <section class="content-section" id="individuelle-gestaltung">
+    <section class="content-section">
         <h2>Individuelle Gestaltung</h2>
         <img src="bild3.png" alt="Individuelle Architektur">
-        <p>Von modularen Grundrissen bis hin zu individuell gestaltbaren Räumen – unsere Häuser passen sich an Sie an.</p>
-        <p>Unsere Architektur bietet Komfort und Flexibilität für alle Lebensphasen.</p>
+        <p>Jedes Mehrfamilienhaus wird individuell geplant, um den Ansprüchen moderner Bewohner gerecht zu werden. Ob flexible Grundrisse, großzügige Balkone oder maßgeschneiderte Wohnkonzepte – unsere Gebäude bieten eine Vielzahl von Möglichkeiten.</p>
+        <p>Durch innovative Planungsansätze schaffen wir Mehrfamilienhäuser, die einzigartig sind und den Wohnkomfort der Bewohner maximieren. Unsere Lösungen sind so individuell wie die Menschen, die darin leben.</p>
     </section>
 
-    <!-- Datenschutzhinweis -->
-    <section id="datenschutz">
-        <h2>Datenschutzhinweis</h2>
-        <p>Diese Website verwendet Cookies zur Optimierung der Benutzerfreundlichkeit. Alle Texte wurden mit ChatGPT erstellt, und die Bilder wurden mit DALL-E generiert.</p>
-    </section>
-
-    <!-- Impressum -->
-    <footer>
-        <p>
-            © 2024 Moderne Mehrfamilienhäuser. Alle Rechte vorbehalten. 
-            <a href="#impressum">Impressum</a>
-        </p>
-        <div id="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a> |
-            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> |
-            <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    <!-- Datenschutz und Impressum -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <div id="modal-content"></div>
         </div>
-    </footer>
+    </div>
 
-    <!-- Impressum -->
-    <section id="impressum">
-        <h2>Impressum</h2>
-        <p>
-            Verantwortlich für den Inhalt: Max Mustermann, Beispielstraße 1, 12345 Beispielstadt.
-        </p>
-        <p>
-            Hinweis: Alle Texte wurden mit ChatGPT erstellt und die Bilder mit DALL-E generiert.
-        </p>
-    </section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Verantwortlich: Sanoj Renhel. Alle Rechte vorbehalten. <a href="#" onclick="openDatenschutz()">Datenschutz</a> | <a href="#" onclick="openImpressum()">Impressum</a></p>
+    </footer>
 
     <!-- JavaScript für Interaktivität -->
     <script>
-        // Dropdown-Menü
-        document.querySelector('.menu-icon').addEventListener('click', function() {
+        function toggleMenu() {
             const menu = document.querySelector('.dropdown-menu');
-            const expanded = menu.getAttribute('aria-expanded') === 'true' || false;
-            menu.setAttribute('aria-expanded', !expanded);
-            menu.style.display = expanded ? 'none' : 'block';
-        });
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
 
-        // Cookie-Banner
-        document.querySelector('#accept-cookies').addEventListener('click', function() {
-            document.querySelector('#cookie-banner').style.display = 'none';
-        });
+        function openModal(content) {
+            document.getElementById('modal-content').innerHTML = content;
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function openDatenschutz() {
+            const content = '<h2>Datenschutzhinweis</h2><p>Diese Website verwendet Cookies und speichert keine personenbezogenen Daten.</p>';
+            openModal(content);
+        }
+
+        function openImpressum() {
+            const content = '<h2>Impressum</h2><p>Verantwortlich für den Inhalt: Sanoj Renhel.</p>';
+            openModal(content);
+        }
+
+        function openPage(page) {
+            const content = {
+                gebaeudetyp: '<h2>Gebäudetypen</h2><p>Inhalt über Gebäudetypen...</p>',
+                verbindungsmittel: '<h2>Verbindungsmittel</h2><p>Inhalt über Verbindungsmittel...</p>',
+                technikfortschritt: '<h2>Technikfortschritt</h2><p>Inhalt über Technikfortschritt...</p>',
+            };
+            openModal(content[page]);
+        }
     </script>
 </body>
 </html>
