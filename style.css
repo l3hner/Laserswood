@@ -10,7 +10,7 @@ body {
 
 /* Header */
 header {
-    background-color: #003366;
+    background-color: #004d00; /* Dunkelgrün */
     color: white;
     text-align: center;
     padding: 2rem 1rem;
@@ -44,7 +44,6 @@ header p {
     padding: 1rem 2rem;
     border-radius: 5px;
     font-size: 1.8rem;
-    overflow: hidden;
 }
 
 /* Inhalt */
@@ -52,39 +51,38 @@ header p {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
-    background-color: white;
+    background-color: #f0f0f0; /* Hellgrauer Hintergrund */
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border: 1px solid #ccc;
 }
 
 .content-section h2 {
-    color: #003366;
+    color: #004d00; /* Dunkelgrün */
     margin-bottom: 1rem;
-    overflow: hidden;
 }
 
 .content-section img {
-    width: 1000px;
+    width: 100%; /* Passt das Bild an die Breite des Containers an */
     height: auto;
     border-radius: 5px;
+    border: 10px solid #ccc; /* 10px Rahmen in Grau */
     margin-bottom: 1rem;
-    overflow: hidden;
 }
 
 .content-section p {
     margin-bottom: 1rem;
     line-height: 1.8;
-    overflow: hidden;
 }
-
 
 /* Footer */
 footer {
-    background-color: #003366;
+    background-color: #004d00; /* Dunkelgrün */
     color: white;
     text-align: center;
     padding: 1rem;
+    background-image: linear-gradient(to top, yellow, #004d00); /* Gelb oben im Verlauf */
 }
 
 /* Responsives Design */
