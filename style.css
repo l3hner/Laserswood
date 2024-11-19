@@ -35,6 +35,7 @@ header p {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .hero h2 {
@@ -43,6 +44,7 @@ header p {
     padding: 1rem 2rem;
     border-radius: 5px;
     font-size: 1.8rem;
+    overflow: hidden;
 }
 
 /* Inhalt */
@@ -53,11 +55,13 @@ header p {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .content-section h2 {
     color: #003366;
     margin-bottom: 1rem;
+    overflow: hidden;
 }
 
 .content-section img {
@@ -65,11 +69,13 @@ header p {
     height: auto;
     border-radius: 5px;
     margin-bottom: 1rem;
+    overflow: hidden;
 }
 
 .content-section p {
     margin-bottom: 1rem;
     line-height: 1.8;
+    overflow: hidden;
 }
 
 
