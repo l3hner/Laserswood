@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Website</title>
+    <!-- Turnstile für Cloudflare Bot-Schutz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turnstile/1.0.0/turnstile.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #f6821f;
+            --secondary-color: #404040;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #ff9f40);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .content {
+            padding: 40px 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Willkommen auf meiner Website</h1>
+            <p>Optimiert für Cloudflare Pages</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container content">
+        <div class="card">
+            <h2>Über uns</h2>
+            <p>Willkommen auf unserer Website! Wir nutzen Cloudflare für schnelles und sicheres Hosting.</p>
+        </div>
+
+        <div class="card">
+            <h2>Unsere Leistungen</h2>
+            <p>Diese Website wird über Cloudflare Pages gehostet und nutzt automatisch:</p>
+            <ul>
+                <li>Globales CDN</li>
+                <li>SSL-Verschlüsselung</li>
+                <li>DDoS-Schutz</li>
+                <li>Automatische Optimierungen</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Kontakt</h2>
+            <p>Email: ihre@email.de</p>
+            <p>Telefon: +49 123 456789</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ihre Firma. Alle Rechte vorbehalten.</p>
+            <p>Powered by Cloudflare Pages</p>
+        </div>
+    </footer>
+</body>
+</html>
