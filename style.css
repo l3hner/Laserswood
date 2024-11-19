@@ -72,6 +72,20 @@ header p {
     line-height: 1.8;
 }
 
+.content-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
 /* Footer */
 footer {
     background-color: #003366;
