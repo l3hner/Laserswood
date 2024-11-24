@@ -3,113 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Moderne Mehrfamilienhäuser: Nachhaltige, effiziente und zeitgemäße Wohnlösungen.">
-    <meta name="keywords" content="Mehrfamilienhäuser, Nachhaltigkeit, Energieeffizienz, Architektur, Technikfortschritt, Gebäudetypen">
-    <meta name="author" content="KI-unterstützte Inhalte (ChatGPT) und Bilder (DALL-E)">
-    <title>Moderne Mehrfamilienhäuser</title>
-    <link rel="stylesheet" href="style.css"> <!-- Verweis auf externe CSS-Datei -->
+    <meta name="description" content="Moderne Mehrfamilienhäuser: Nachhaltige, effiziente und zeitgemäße Wohnlösungen mit Smart-Home-Integration und höchsten Energiestandards.">
+    <meta name="keywords" content="Mehrfamilienhäuser, Nachhaltigkeit, Energieeffizienz, Smart Home, Architektur, Technikfortschritt, Gebäudetypen, KfW-Standard, Barrierefreiheit">
+    <meta name="author" content="KI-unterstützte Inhalte">
+    <title>Moderne Mehrfamilienhäuser | Ihr nachhaltiges Zuhause</title>
+    
+    <!-- Preload wichtiger Ressourcen -->
+    <link rel="preload" href="fonts/open-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="hero-image.webp" as="image">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
-    <!-- Cookie-Banner -->
-    <div id="cookie-banner" aria-live="polite">
-        <p>Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. <a href="#" onclick="openDatenschutz()">Mehr erfahren</a>.</p>
-        <button onclick="acceptEssentialCookies()">Essentielle Cookies akzeptieren</button>
-        <button onclick="acceptAllCookies()">Alle Cookies akzeptieren</button>
-    </div>
+    <!-- Skip-Link für Barrierefreiheit -->
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
 
-    <!-- Datenschutz-Fenster -->
-    <div id="datenschutz-modal" class="modal">
-        <div class="modal-content">
-            <h2>Datenschutzhinweis</h2>
-            <p>Diese Website verwendet Cookies, um Ihre Benutzererfahrung zu verbessern. Sie können entscheiden, ob nur essentielle Cookies oder alle Cookies zugelassen werden.</p>
-            <p>Essentielle Cookies sind notwendig, um die grundlegenden Funktionen der Website zu gewährleisten. Weitere Informationen finden Sie in unserer Datenschutzerklärung.</p>
-            <button onclick="closeDatenschutz()">Einverstanden</button>
+    <!-- Cookie-Banner mit erweiterter Funktionalität -->
+    <div id="cookie-banner" class="cookie-banner" role="alert" aria-live="polite">
+        <div class="cookie-content">
+            <h2>Cookie-Einstellungen</h2>
+            <p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unsere Dienste zu optimieren.</p>
+            <div class="cookie-options">
+                <label class="cookie-option">
+                    <input type="checkbox" name="essential" checked disabled>
+                    <span>Essentielle Cookies (erforderlich)</span>
+                </label>
+                <label class="cookie-option">
+                    <input type="checkbox" name="analytics">
+                    <span>Analyse Cookies</span>
+                </label>
+                <label class="cookie-option">
+                    <input type="checkbox" name="marketing">
+                    <span>Marketing Cookies</span>
+                </label>
+            </div>
+            <div class="cookie-buttons">
+                <button onclick="acceptSelectedCookies()" class="btn-primary">Auswahl bestätigen</button>
+                <button onclick="acceptAllCookies()" class="btn-secondary">Alle akzeptieren</button>
+                <button onclick="openDatenschutz()" class="btn-text">Mehr erfahren</button>
+            </div>
         </div>
     </div>
 
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <h1>Moderne Mehrfamilienhäuser</h1>
-            <p>Nachhaltigkeit, Innovation und Komfort – Willkommen bei Ihrem neuen Zuhause!</p>
+    <!-- Header mit erweiterter Navigation -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="tel:+49123456789" aria-label="Telefon">
+                        <i class="icon-phone"></i>+49 123 456789
+                    </a>
+                    <a href="mailto:info@mehrfamilienhaus.de" aria-label="E-Mail">
+                        <i class="icon-mail"></i>info@mehrfamilienhaus.de
+                    </a>
+                </div>
+                <div class="language-switch">
+                    <button aria-label="Sprache ändern" onclick="toggleLanguage()">
+                        <span class="current-lang">DE</span>
+                        <i class="icon-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <nav>
-            <!-- Dropdown-Trigger -->
-            <div class="menu-trigger" aria-label="Menü öffnen" tabindex="0" onclick="toggleMenu()">≡</div>
-            <!-- Dropdown-Menü -->
-            <ul class="dropdown-menu">
-                <li><a href="gebaeudetyp.html" target="_blank">Gebäudetyp</a></li>
-                <li><a href="verbindungsmittel.html" target="_blank">Verbindungsmittel</a></li>
-                <li><a href="technikfortschritt.html" target="_blank">Technikfortschritt</a></li>
-            </ul>
+        
+        <nav class="main-nav container" aria-label="Hauptnavigation">
+            <a href="/" class="logo" aria-label="Zur Startseite">
+                <img src="logo.svg" alt="Mehrfamilienhaus Logo" width="180" height="60">
+            </a>
+            
+            <button class="menu-trigger" aria-expanded="false" aria-label="Menü öffnen" onclick="toggleMenu()">
+                <span class="hamburger"></span>
+            </button>
+
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li class="nav-item has-submenu">
+                        <a href="#" class="nav-link">Gebäudetypen</a>
+                        <ul class="submenu">
+                            <li><a href="#">Klassische Mehrfamilienhäuser</a></li>
+                            <li><a href="#">Smart Homes</a></li>
+                            <li><a href="#">Energieeffiziente Bauten</a></li>
+                            <li><a href="#">Barrierefreies Wohnen</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#nachhaltigkeit" class="nav-link">Nachhaltigkeit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#ausstattung" class="nav-link">Ausstattung</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#standorte" class="nav-link">Standorte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#kontakt" class="nav-link">Kontakt</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="#beratung" class="btn-primary">Beratungstermin vereinbaren</a>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero-Bereich -->
-    <section class="hero">
-        <h2>Ihr neues Zuhause in bester Lage</h2>
-        <p>Entdecken Sie nachhaltige, energieeffiziente und stilvolle Mehrfamilienhäuser – maßgeschneidert für moderne Ansprüche.</p>
-    </section>
+    <main id="main-content">
+        <!-- Hero-Sektion mit Slider -->
+        <section class="hero" aria-label="Hauptbanner">
+            <div class="hero-slider" id="hero-slider">
+                <div class="slide active" data-aos="fade-in">
+                    <picture>
+                        <source srcset="hero1.webp" type="image/webp">
+                        <source srcset="hero1.jpg" type="image/jpeg">
+                        <img src="hero1.jpg" alt="Moderne Mehrfamilienhäuser in urbaner Umgebung" loading="eager">
+                    </picture>
+                    <div class="slide-content container">
+                        <h1 class="slide-title">Ihr nachhaltiges Zuhause</h1>
+                        <p class="slide-description">Entdecken Sie moderne Mehrfamilienhäuser mit KfW-55-Standard und Smart-Home-Integration.</p>
+                        <a href="#projekte" class="btn-primary">Projekte entdecken</a>
+                    </div>
+                </div>
+                <!-- Weitere Slider-Elemente hier -->
+            </div>
+            <div class="slider-controls">
+                <button class="prev" aria-label="Vorheriges Bild">←</button>
+                <button class="next" aria-label="Nächstes Bild">→</button>
+            </div>
+        </section>
 
-    <!-- Abschnitt 1: Eleganz und Effizienz -->
-    <section class="content-section">
-        <h2>Eleganz und Effizienz</h2>
-        <img src="bild1.png" alt="Bild des Mehrfamilienhauses">
-        <p>Unsere Mehrfamilienhäuser vereinen Eleganz und Effizienz. Genießen Sie modernes Design, das Ästhetik und Funktionalität perfekt kombiniert.</p>
-    </section>
+        <!-- USP-Sektion -->
+        <section class="usps" aria-label="Unsere Vorteile">
+            <div class="container">
+                <div class="usp-grid">
+                    <div class="usp-item" data-aos="fade-up">
+                        <i class="icon-eco"></i>
+                        <h3>Nachhaltigkeit</h3>
+                        <p>KfW-55-Standard und modernste Energieeffizienz für minimale Betriebskosten.</p>
+                    </div>
+                    <div class="usp-item" data-aos="fade-up" data-aos-delay="100">
+                        <i class="icon-smart"></i>
+                        <h3>Smart Home</h3>
+                        <p>Intelligente Haussteuerung für maximalen Komfort und Sicherheit.</p>
+                    </div>
+                    <div class="usp-item" data-aos="fade-up" data-aos-delay="200">
+                        <i class="icon-location"></i>
+                        <h3>Premium Lage</h3>
+                        <p>Ausgewählte Standorte mit optimaler Infrastruktur und Anbindung.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Abschnitt 2: Nachhaltiges Bauen -->
-    <section class="content-section">
-        <h2>Nachhaltiges Bauen</h2>
-        <img src="bild2.png" alt="Nachhaltige Bauweise">
-        <p>Nachhaltigkeit steht bei uns im Mittelpunkt. Unsere Bauprojekte sind umweltfreundlich und energieeffizient.</p>
-    </section>
+        <!-- Projektübersicht -->
+        <section id="projekte" class="projects" aria-label="Aktuelle Projekte">
+            <div class="container">
+                <h2 data-aos="fade-up">Aktuelle Projekte</h2>
+                <div class="project-filters" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">Alle</button>
+                    <button class="filter-btn" data-filter="verfuegbar">Verfügbar</button>
+                    <button class="filter-btn" data-filter="bau">Im Bau</button>
+                    <button class="filter-btn" data-filter="planung">In Planung</button>
+                </div>
+                
+                <div class="project-grid">
+                    <article class="project-card" data-category="verfuegbar" data-aos="fade-up">
+                        <div class="project-image">
+                            <img src="projekt1.jpg" alt="Stadtvillage Green Living" loading="lazy">
+                            <span class="status-badge">Verfügbar</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Stadtvillage Green Living</h3>
+                            <p class="location">Berlin-Charlottenburg</p>
+                            <ul class="project-features">
+                                <li>8 Wohneinheiten</li>
+                                <li>65-120 m²</li>
+                                <li>KfW-55-Standard</li>
+                            </ul>
+                            <a href="#" class="btn-secondary">Mehr erfahren</a>
+                        </div>
+                    </article>
+                    <!-- Weitere Projektcards hier -->
+                </div>
+            </div>
+        </section>
 
-    <!-- Abschnitt 3: Individuelle Gestaltung -->
-    <section class="content-section">
-        <h2>Individuelle Gestaltung</h2>
-        <img src="bild3.png" alt="Individuelle Architektur">
-        <p>Unsere Häuser passen sich Ihren Bedürfnissen an. Mit flexiblen Grundrissen und maßgeschneiderten Konzepten bieten wir Wohnkomfort auf höchstem Niveau.</p>
-    </section>
+        <!-- Nachhaltigkeitssektion -->
+        <section id="nachhaltigkeit" class="sustainability" aria-label="Nachhaltigkeit">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="text-content" data-aos="fade-right">
+                        <h2>Nachhaltigkeit als Grundprinzip</h2>
+                        <p>Unsere Mehrfamilienhäuser setzen neue Maßstäbe in Sachen Nachhaltigkeit und Energieeffizienz:</p>
+                        <ul class="feature-list">
+                            <li>Photovoltaikanlage mit Batteriespeicher</li>
+                            <li>Wärmepumpentechnologie</li>
+                            <li>Dreifach-verglaste Fenster</li>
+                            <li>Grüne Dachbegrünung</li>
+                            <li>E-Mobility-Ladestation</li>
+                        </ul>
+                        <a href="#" class="btn-primary">Energiekonzept entdecken</a>
+                    </div>
+                    <div class="image-content" data-aos="fade-left">
+                        <img src="nachhaltigkeit.jpg" alt="Nachhaltige Gebäudetechnologie" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ausstattungssektion -->
+        <section id="ausstattung" class="features" aria-label="Ausstattung">
+            <div class="container">
+                <h2 data-aos="fade-up">Premium Ausstattung</h2>
+                <div class="feature-grid">
+                    <div class="feature-item" data-aos="fade-up">
+                        <i class="icon-security"></i>
+                        <h3>Sicherheit</h3>
+                        <p>Videogegensprechanlage, digitales Schließsystem und 24/7 Gebäudeüberwachung.</p>
+                    </div>
+                    <!-- Weitere Feature-Items hier -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontaktformular -->
+        <section id="kontakt" class="contact" aria-label="Kontakt">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h2>Kontaktieren Sie uns</h2>
+                        <p>Vereinbaren Sie einen persönlichen Beratungstermin oder stellen Sie uns Ihre Fragen.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="icon-phone"></i>
+                                <div>
+                                    <h3>Telefon</h3>
+                                    <p>+49 123 456789</p>
+                                </div>
+                            </div>
+                            <!-- Weitere Kontaktdetails hier -->
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" data-aos="fade-left">
+                        <div class="form-group">
+                            <label for="name">Name*</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Nachricht*</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox">
+                                <input type="checkbox" name="privacy" required>
+                                <span>Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu*</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-primary">Nachricht senden</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <p>© 2024 Verantwortlich: Sanoj Renhel. Alle Rechte vorbehalten. <a href="#" onclick="openDatenschutz()">Datenschutz</a> | <a href="#" onclick="openImpressum()">Impressum</a></p>
-        <ul class="social-links">
-            <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
-            <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-        </ul>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Dropdown-Menü
-        function toggleMenu() {
-            const menu = document.querySelector('.dropdown-menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-
-        // Datenschutz-Fenster öffnen
-        function openDatenschutz() {
-            document.getElementById('datenschutz-modal').style.display = 'block';
-        }
-
-        // Datenschutz-Fenster schließen
-        function closeDatenschutz() {
-            document.getElementById('datenschutz-modal').style.display = 'none';
-        }
-
-        // Cookies akzeptieren
-        function acceptEssentialCookies() {
-            alert("Essentielle Cookies wurden akzeptiert.");
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
-
-        function acceptAllCookies() {
-            alert("Alle Cookies wurden akzeptiert.");
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
-    </script>
-</body>
-</html>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
