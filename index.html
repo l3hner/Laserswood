@@ -12,26 +12,40 @@
     <meta property="og:url" content="https://example.com">
     <meta name="twitter:card" content="summary_large_image">
     <title>Moderne Mehrfamilienhäuser</title>
-    <link rel="stylesheet" href="style.css"> <!-- Externe CSS-Datei -->
+    <link rel="stylesheet" href="style.css"> <!-- Verweis auf externe CSS-Datei -->
 </head>
 <body>
     <!-- Cookie-Banner -->
     <div id="cookie-banner" aria-live="polite">
         <p>Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. <a href="#" onclick="openDatenschutz()">Mehr erfahren</a>.</p>
-        <button id="accept-cookies">Einverstanden</button>
+        <button onclick="acceptEssentialCookies()">Essentielle Cookies akzeptieren</button>
+        <button onclick="acceptAllCookies()">Alle Cookies akzeptieren</button>
+    </div>
+
+    <!-- Datenschutz-Fenster -->
+    <div id="datenschutz-modal" class="modal">
+        <div class="modal-content">
+            <h2>Datenschutzhinweis</h2>
+            <p>Diese Website verwendet Cookies, um Ihre Benutzererfahrung zu verbessern. Sie können entscheiden, ob nur essentielle Cookies oder alle Cookies zugelassen werden.</p>
+            <p>Essentielle Cookies sind notwendig, um die grundlegenden Funktionen der Website zu gewährleisten. Weitere Informationen finden Sie in unserer Datenschutzerklärung.</p>
+            <button onclick="closeDatenschutz()">Einverstanden</button>
+        </div>
     </div>
 
     <!-- Header -->
     <header>
-        <h1>Moderne Mehrfamilienhäuser</h1>
+        <div class="header-container">
+            <h1>Moderne Mehrfamilienhäuser</h1>
+            <p>Nachhaltigkeit, Innovation und Komfort – Willkommen bei Ihrem neuen Zuhause!</p>
+        </div>
         <nav>
             <!-- Dropdown-Trigger -->
             <div class="menu-trigger" aria-label="Menü öffnen" tabindex="0" onclick="toggleMenu()">≡</div>
             <!-- Dropdown-Menü -->
             <ul class="dropdown-menu">
-                <li><a href="#" onclick="openPage('gebaeudetyp')">Gebäudetyp</a></li>
-                <li><a href="#" onclick="openPage('verbindungsmittel')">Verbindungsmittel</a></li>
-                <li><a href="#" onclick="openPage('technikfortschritt')">Technikfortschritt</a></li>
+                <li><a href="gebaeudetyp.html" target="_blank">Gebäudetyp</a></li>
+                <li><a href="verbindungsmittel.html" target="_blank">Verbindungsmittel</a></li>
+                <li><a href="technikfortschritt.html" target="_blank">Technikfortschritt</a></li>
             </ul>
         </nav>
     </header>
@@ -39,78 +53,93 @@
     <!-- Hero-Bereich -->
     <section class="hero">
         <h2>Ihr neues Zuhause in bester Lage</h2>
+        <p>Entdecken Sie nachhaltige, energieeffiziente und stilvolle Mehrfamilienhäuser – maßgeschneidert für moderne Ansprüche.</p>
+        <button onclick="scrollToContent()" class="hero-button">Mehr erfahren</button>
     </section>
 
-    <!-- Abschnitt 1: Eleganz und Effizienz -->
-    <section class="content-section">
-        <h2>Eleganz und Effizienz</h2>
-        <img src="bild1.png" alt="Bild des Mehrfamilienhauses">
-        <p>Eleganz und Effizienz sind zwei zentrale Aspekte moderner Mehrfamilienhäuser. Unsere Gebäude vereinen zeitgemäße Architektur mit durchdachten Wohnkonzepten, die sowohl optisch beeindrucken als auch funktional überzeugen. Dank nachhaltiger Materialien und energieeffizienter Technologien schaffen sie ein angenehmes Wohnumfeld, das die Ressourcen schont.</p>
-        <p>Großzügige Fensterflächen sorgen für helle, lichtdurchflutete Räume, während innovative Dämmstoffe für Energieeinsparungen sorgen. Ob für Familien, Singles oder Paare – unsere Häuser sind so gestaltet, dass sie den Ansprüchen moderner Bewohner gerecht werden und gleichzeitig einen langfristigen Wert darstellen.</p>
-    </section>
-
-    <!-- Abschnitt 2: Nachhaltiges Bauen -->
-    <section class="content-section">
-        <h2>Nachhaltiges Bauen</h2>
-        <img src="bild2.png" alt="Nachhaltige Bauweise">
-        <p>Nachhaltiges Bauen ist der Schlüssel für die Zukunft. Unsere Mehrfamilienhäuser werden aus umweltfreundlichen Materialien gefertigt, die nicht nur den CO₂-Ausstoß minimieren, sondern auch für ein gesundes Wohnklima sorgen. Moderne Dämmung, Solaranlagen und innovative Heizsysteme machen unsere Gebäude besonders effizient.</p>
-        <p>Mit dem Fokus auf Nachhaltigkeit setzen wir auf langfristige Vorteile für die Bewohner und die Umwelt. Die Kombination aus grünen Bauweisen und moderner Architektur macht unsere Mehrfamilienhäuser zu einer zukunftssicheren Wahl.</p>
-    </section>
-
-    <!-- Abschnitt 3: Individuelle Gestaltung -->
-    <section class="content-section">
-        <h2>Individuelle Gestaltung</h2>
-        <img src="bild3.png" alt="Individuelle Architektur">
-        <p>Jedes Mehrfamilienhaus wird individuell geplant, um den Ansprüchen moderner Bewohner gerecht zu werden. Ob flexible Grundrisse, großzügige Balkone oder maßgeschneiderte Wohnkonzepte – unsere Gebäude bieten eine Vielzahl von Möglichkeiten.</p>
-        <p>Durch innovative Planungsansätze schaffen wir Mehrfamilienhäuser, die einzigartig sind und den Wohnkomfort der Bewohner maximieren. Unsere Lösungen sind so individuell wie die Menschen, die darin leben.</p>
-    </section>
-
-    <!-- Datenschutz und Impressum -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">×</span>
-            <div id="modal-content"></div>
+    <!-- Gebäudetypen -->
+    <section id="gebaeudetypen" class="interactive-section">
+        <h2>Gebäudetypen</h2>
+        <div class="interactive-grid">
+            <div class="card">
+                <img src="reihenhaus.jpg" alt="Reihenhaus">
+                <h3>Reihenhaus</h3>
+                <p>Reihenhäuser bieten eine kompakte Bauweise und effiziente Flächennutzung.</p>
+            </div>
+            <div class="card">
+                <img src="hochhaus.jpg" alt="Hochhaus">
+                <h3>Hochhaus</h3>
+                <p>Perfekt für urbane Umgebungen: moderne Hochhäuser für Gemeinschaftsleben.</p>
+            </div>
+            <div class="card">
+                <img src="apartment.jpg" alt="Apartmentgebäude">
+                <h3>Apartmentgebäude</h3>
+                <p>Luxuriös, geräumig und modern – ideal für größere Familien oder Paare.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2024 Verantwortlich: Sanoj Renhel. Alle Rechte vorbehalten. <a href="#" onclick="openDatenschutz()">Datenschutz</a> | <a href="#" onclick="openImpressum()">Impressum</a></p>
+        <ul class="social-links">
+            <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        </ul>
     </footer>
 
-    <!-- JavaScript für Interaktivität -->
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
+        // Dropdown-Menü
         function toggleMenu() {
             const menu = document.querySelector('.dropdown-menu');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
 
+        // Datenschutz-Fenster öffnen
+        function openDatenschutz() {
+            document.getElementById('datenschutz-modal').style.display = 'block';
+        }
+
+        // Datenschutz-Fenster schließen
+        function closeDatenschutz() {
+            document.getElementById('datenschutz-modal').style.display = 'none';
+        }
+
+        // Cookies akzeptieren
+        function acceptEssentialCookies() {
+            alert("Essentielle Cookies wurden akzeptiert.");
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        function acceptAllCookies() {
+            alert("Alle Cookies wurden akzeptiert.");
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        // Scroll zu Content
+        function scrollToContent() {
+            document.querySelector('#gebaeudetypen').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Modal öffnen und schließen
         function openModal(content) {
-            document.getElementById('modal-content').innerHTML = content;
+            const modalBody = document.getElementById('modal-body');
+            modalBody.innerHTML = content;
             document.getElementById('modal').style.display = 'block';
         }
 
         function closeModal() {
             document.getElementById('modal').style.display = 'none';
-        }
-
-        function openDatenschutz() {
-            const content = '<h2>Datenschutzhinweis</h2><p>Diese Website verwendet Cookies und speichert keine personenbezogenen Daten.</p>';
-            openModal(content);
-        }
-
-        function openImpressum() {
-            const content = '<h2>Impressum</h2><p>Verantwortlich für den Inhalt: Sanoj Renhel.</p>';
-            openModal(content);
-        }
-
-        function openPage(page) {
-            const content = {
-                gebaeudetyp: '<h2>Gebäudetypen</h2><p>Inhalt über Gebäudetypen...</p>',
-                verbindungsmittel: '<h2>Verbindungsmittel</h2><p>Inhalt über Verbindungsmittel...</p>',
-                technikfortschritt: '<h2>Technikfortschritt</h2><p>Inhalt über Technikfortschritt...</p>',
-            };
-            openModal(content[page]);
         }
     </script>
 </body>
