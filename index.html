@@ -6,11 +6,6 @@
     <meta name="description" content="Moderne Mehrfamilienhäuser: Nachhaltige, effiziente und zeitgemäße Wohnlösungen.">
     <meta name="keywords" content="Mehrfamilienhäuser, Nachhaltigkeit, Energieeffizienz, Architektur, Technikfortschritt, Gebäudetypen">
     <meta name="author" content="KI-unterstützte Inhalte (ChatGPT) und Bilder (DALL-E)">
-    <meta property="og:title" content="Moderne Mehrfamilienhäuser">
-    <meta property="og:description" content="Erleben Sie zukunftsweisende Architektur mit modernem Design und Nachhaltigkeit.">
-    <meta property="og:image" content="bild1.png">
-    <meta property="og:url" content="https://example.com">
-    <meta name="twitter:card" content="summary_large_image">
     <title>Moderne Mehrfamilienhäuser</title>
     <link rel="stylesheet" href="style.css"> <!-- Verweis auf externe CSS-Datei -->
 </head>
@@ -54,29 +49,27 @@
     <section class="hero">
         <h2>Ihr neues Zuhause in bester Lage</h2>
         <p>Entdecken Sie nachhaltige, energieeffiziente und stilvolle Mehrfamilienhäuser – maßgeschneidert für moderne Ansprüche.</p>
-        <button onclick="scrollToContent()" class="hero-button">Mehr erfahren</button>
     </section>
 
-    <!-- Gebäudetypen -->
-    <section id="gebaeudetypen" class="interactive-section">
-        <h2>Gebäudetypen</h2>
-        <div class="interactive-grid">
-            <div class="card">
-                <img src="reihenhaus.jpg" alt="Reihenhaus">
-                <h3>Reihenhaus</h3>
-                <p>Reihenhäuser bieten eine kompakte Bauweise und effiziente Flächennutzung.</p>
-            </div>
-            <div class="card">
-                <img src="hochhaus.jpg" alt="Hochhaus">
-                <h3>Hochhaus</h3>
-                <p>Perfekt für urbane Umgebungen: moderne Hochhäuser für Gemeinschaftsleben.</p>
-            </div>
-            <div class="card">
-                <img src="apartment.jpg" alt="Apartmentgebäude">
-                <h3>Apartmentgebäude</h3>
-                <p>Luxuriös, geräumig und modern – ideal für größere Familien oder Paare.</p>
-            </div>
-        </div>
+    <!-- Abschnitt 1: Eleganz und Effizienz -->
+    <section class="content-section">
+        <h2>Eleganz und Effizienz</h2>
+        <img src="bild1.png" alt="Bild des Mehrfamilienhauses">
+        <p>Unsere Mehrfamilienhäuser vereinen Eleganz und Effizienz. Genießen Sie modernes Design, das Ästhetik und Funktionalität perfekt kombiniert.</p>
+    </section>
+
+    <!-- Abschnitt 2: Nachhaltiges Bauen -->
+    <section class="content-section">
+        <h2>Nachhaltiges Bauen</h2>
+        <img src="bild2.png" alt="Nachhaltige Bauweise">
+        <p>Nachhaltigkeit steht bei uns im Mittelpunkt. Unsere Bauprojekte sind umweltfreundlich und energieeffizient.</p>
+    </section>
+
+    <!-- Abschnitt 3: Individuelle Gestaltung -->
+    <section class="content-section">
+        <h2>Individuelle Gestaltung</h2>
+        <img src="bild3.png" alt="Individuelle Architektur">
+        <p>Unsere Häuser passen sich Ihren Bedürfnissen an. Mit flexiblen Grundrissen und maßgeschneiderten Konzepten bieten wir Wohnkomfort auf höchstem Niveau.</p>
     </section>
 
     <!-- Footer -->
@@ -88,14 +81,6 @@
             <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
         </ul>
     </footer>
-
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">×</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
 
     <!-- JavaScript -->
     <script>
@@ -124,22 +109,6 @@
         function acceptAllCookies() {
             alert("Alle Cookies wurden akzeptiert.");
             document.getElementById('cookie-banner').style.display = 'none';
-        }
-
-        // Scroll zu Content
-        function scrollToContent() {
-            document.querySelector('#gebaeudetypen').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Modal öffnen und schließen
-        function openModal(content) {
-            const modalBody = document.getElementById('modal-body');
-            modalBody.innerHTML = content;
-            document.getElementById('modal').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
         }
     </script>
 </body>
