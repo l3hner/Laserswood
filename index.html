@@ -3,69 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonas Lehner - Exklusiver Wohnbau</title>
+    <title>Jonas Lehner - Nachhaltigkeit trifft Exzellenz</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
         <div class="hero">
-            <h1>Jonas Lehner - Ihr Partner für Exklusiven Wohnbau</h1>
-            <p>Setzen Sie auf nachhaltige Eleganz und unvergleichliche Rentabilität.</p>
-            <a href="#roi-calculator" class="cta">Jetzt ROI berechnen</a>
+            <h1>Jonas Lehner - Nachhaltigkeit trifft Exzellenz</h1>
+            <p>Ihr Partner für exklusive, rentable und umweltfreundliche Bauprojekte.</p>
+            <a href="#about" class="cta">Mehr erfahren</a>
+            <a href="#projects" class="cta">Unsere Projekte</a>
         </div>
     </header>
 
+    <nav>
+        <ul class="navbar">
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#projects">Projekte</a></li>
+            <li><a href="#calculations">Berechnungen</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
     <main>
         <section id="about">
-            <h2>Über Jonas Lehner</h2>
-            <p>Jonas Lehner vereint Familientradition und moderne Baukunst, um Ihnen ein unvergleichliches Investment zu bieten. Als familiengeführtes Unternehmen steht bei uns Qualität, Präzision und Innovation an erster Stelle.</p>
+            <h2>Unsere Mission</h2>
+            <p>Bei Jonas Lehner vereinen wir familiäre Werte und moderne Baukunst, um Ihnen exklusive, nachhaltige Wohnräume zu schaffen.</p>
+            <h3>Zertifizierungen</h3>
             <ul>
-                <li>Exklusive Projekte mit höchster Wertschöpfung.</li>
-                <li>Individuelle Beratung für Ihre Vision.</li>
-                <li>Garantierte Qualität - geprüft und zertifiziert.</li>
+                <li>QDF-Zertifiziert</li>
+                <li>KfW-Förderfähig</li>
             </ul>
+            <h3>Unsere Geschichte</h3>
+            <p>Über 50 Jahre Expertise in innovativer Holzfertigbauweise.</p>
         </section>
 
-        <section id="roi-calculator">
-            <h2>ROI-Rechner</h2>
-            <form id="roi-form">
-                <label for="investment">Investitionssumme (€):</label>
-                <input type="number" id="investment" required>
-
-                <label for="rent">Geplante Mieteinnahmen pro Monat (€):</label>
-                <input type="number" id="rent" required>
-
-                <label for="expenses">Jährliche Betriebskosten (€):</label>
-                <input type="number" id="expenses" required>
-
-                <label for="subsidy">Fördermittel (€):</label>
-                <input type="number" id="subsidy">
-
-                <button type="submit">Berechnen</button>
-            </form>
-            <div id="roi-result"></div>
+        <section id="projects">
+            <h2>Unsere Projekte</h2>
+            <div class="project-gallery">
+                <div class="project">
+                    <h3>Projekt 1</h3>
+                    <p>Modernes Wohnbauprojekt mit 12 Einheiten und höchster Energieeffizienz.</p>
+                </div>
+                <div class="project">
+                    <h3>Projekt 2</h3>
+                    <p>Nachhaltiger Wohnkomplex in urbaner Lage mit 20 % Energiekosteneinsparung.</p>
+                </div>
+            </div>
         </section>
 
-        <section id="subsidy-simulator">
-            <h2>Fördermittelsimulator</h2>
-            <form id="subsidy-form">
-                <label for="units">Anzahl der Wohneinheiten:</label>
-                <input type="number" id="units" required>
+        <section id="calculations">
+            <h2>Berechnungen</h2>
+            <div class="tabs">
+                <button class="tab" onclick="showTab('roi')">ROI-Rechner</button>
+                <button class="tab" onclick="showTab('subsidy')">Fördermittelsimulator</button>
+            </div>
 
-                <label for="efficiency">Energieeffizienzklasse:</label>
-                <select id="efficiency" required>
-                    <option value="KfW40">KfW 40</option>
-                    <option value="KfW55">KfW 55</option>
-                    <option value="KfW70">KfW 70</option>
-                </select>
+            <div id="roi" class="tab-content">
+                <h3>ROI-Rechner</h3>
+                <form id="roi-form">
+                    <label for="investment">Investitionssumme (€):</label>
+                    <input type="number" id="investment" required>
 
-                <label for="cost">Baukosten (€):</label>
-                <input type="number" id="cost" required>
+                    <label for="rent">Geplante Mieteinnahmen pro Monat (€):</label>
+                    <input type="number" id="rent" required>
 
-                <button type="submit">Förderung berechnen</button>
-            </form>
-            <div id="subsidy-result"></div>
+                    <label for="expenses">Jährliche Betriebskosten (€):</label>
+                    <input type="number" id="expenses" required>
+
+                    <label for="subsidy">Fördermittel (€):</label>
+                    <input type="number" id="subsidy">
+
+                    <button type="submit">Berechnen</button>
+                </form>
+                <div id="roi-result"></div>
+            </div>
+
+            <div id="subsidy" class="tab-content">
+                <h3>Fördermittelsimulator</h3>
+                <form id="subsidy-form">
+                    <label for="units">Anzahl der Wohneinheiten:</label>
+                    <input type="number" id="units" required>
+
+                    <label for="efficiency">Energieeffizienzklasse:</label>
+                    <select id="efficiency" required>
+                        <option value="KfW40">KfW 40</option>
+                        <option value="KfW55">KfW 55</option>
+                        <option value="KfW70">KfW 70</option>
+                    </select>
+
+                    <label for="cost">Baukosten (€):</label>
+                    <input type="number" id="cost" required>
+
+                    <button type="submit">Förderung berechnen</button>
+                </form>
+                <div id="subsidy-result"></div>
+            </div>
         </section>
 
         <section id="contact">
