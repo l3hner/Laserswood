@@ -1,6 +1,6 @@
 document.getElementById('roi-form').addEventListener('submit', function(event) {
     event.preventDefault();
-
+    
     const investment = parseFloat(document.getElementById('investment').value);
     const rent = parseFloat(document.getElementById('rent').value);
     const expenses = parseFloat(document.getElementById('expenses').value);
