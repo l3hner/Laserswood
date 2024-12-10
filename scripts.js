@@ -11,7 +11,7 @@ document.getElementById('roi-form').addEventListener('submit', function(event) {
     const adjustedInvestment = investment - subsidy;
     const roi = ((netIncome / adjustedInvestment) * 100).toFixed(2);
 
-    document.getElementById('roi-result').textContent = `Geschätzter ROI: ${roi}%`;
+    document.getElementById('roi-result').textContent = `Ihr geschätzter ROI beträgt: ${roi}%`;
 });
 
 document.getElementById('subsidy-form').addEventListener('submit', function(event) {
@@ -30,4 +30,15 @@ document.getElementById('subsidy-form').addEventListener('submit', function(even
     const subsidyPercentage = ((totalSubsidy / cost) * 100).toFixed(2);
 
     document.getElementById('subsidy-result').textContent = `Gesamtförderung: €${totalSubsidy.toLocaleString()} (${subsidyPercentage}% der Baukosten)`;
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    alert(`Vielen Dank, ${name}! Ihre Nachricht wurde gesendet.`);
+    document.getElementById('contact-form').reset();
 });
